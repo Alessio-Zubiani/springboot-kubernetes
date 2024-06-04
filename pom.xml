@@ -82,6 +82,7 @@
 		         	<execution>
 		             	<goals>
 		                  	<goal>build</goal>
+		                  	<goal>push</goal>
 		                  	<goal>resource</goal>
 		                  	<goal>apply</goal>
 		             	</goals>
