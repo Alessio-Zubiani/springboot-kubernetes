@@ -20,7 +20,6 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<jkube.skip.push>false</jkube.skip.push>
 		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
 		<jkube.createExternalUrls>true</jkube.createExternalUrls>
@@ -86,7 +85,6 @@
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
-	        		<buildStrategy>jib</buildStrategy>
 	        		<images>
 				        <image>
 				          	<name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
