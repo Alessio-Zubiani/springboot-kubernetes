@@ -20,12 +20,11 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
+		<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
-		<jkube.createExternalUrls>true</jkube.createExternalUrls>
-		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
-		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>
-  		<jkube.skip.tag>true</jkube.skip.tag>-->
+		<jkube.skip.tag>true</jkube.skip.tag>
+		<!--<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
+		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>-->
 	</properties>
 	
 	<dependencies>
@@ -80,11 +79,11 @@
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
-  				<configuration>
-	  				<!--<authConfig>
+  				<!--<configuration>
+	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
-	        		</authConfig>-->
+	        		</authConfig>
 	        		<images>
 				        <image>
 				          	<name>docker.io/alessiozubiani1996/${project.artifactId}:${project.version}</name>
@@ -95,9 +94,10 @@
 					      	<jkube-service>
 					        	<type>LoadBalancer</type>
 					      	</jkube-service>
+					      	
 					    </config>
 				  	</enricher>
-        		</configuration>
+        		</configuration>-->
   				<executions>
 		         	<execution>
 		             	<goals>
