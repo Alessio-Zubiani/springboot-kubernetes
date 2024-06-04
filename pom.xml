@@ -13,16 +13,16 @@
 	
 	<groupId>com.example.kubernetes</groupId>
 	<artifactId>springboot-kubernetes</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	
 	<name>springboot-kubernetes</name>
 	<description>SpringBoot with Kubernetes</description>
 	
 	<properties>
 		<java.version>17</java.version>
-		<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
+		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
-		<!--<jkube.createExternalUrls>true</jkube.createExternalUrls>
+		<jkube.createExternalUrls>true</jkube.createExternalUrls>
 		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
 		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>
   		<jkube.skip.tag>true</jkube.skip.tag>-->
@@ -85,6 +85,18 @@
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
+	        		<images>
+	                    <image>
+	                        <name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
+	                    </image>
+	                </images>
+	                <enricher>
+				    	<config>
+					      	<jkube-service>
+					        	<type>LoadBalancer</type>
+					      	</jkube-service>
+					    </config>
+				  	</enricher>
         		</configuration>
   				<executions>
 		         	<execution>
