@@ -81,13 +81,13 @@
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
   				<configuration>
-	  				<authConfig>
+	  				<!--<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
-	        		</authConfig>
+	        		</authConfig>-->
 	        		<images>
 				        <image>
-				          	<name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
+				          	<name>docker.io/alessiozubiani1996/${project.artifactId}:${project.version}</name>
 		         		</image>
 			     	</images>
 	                <enricher>
