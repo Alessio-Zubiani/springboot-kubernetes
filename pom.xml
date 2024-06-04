@@ -20,7 +20,7 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<jkube.generator.name>alessiozubiani1996/${project.artifactId}:latest</jkube.generator.name>
+		<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
 		<!--<jkube.createExternalUrls>true</jkube.createExternalUrls>
 		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
