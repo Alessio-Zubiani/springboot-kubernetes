@@ -85,11 +85,12 @@
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
+	        		<buildStrategy>jib</buildStrategy>
 	        		<images>
-	                    <image>
-	                        <name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
-	                    </image>
-	                </images>
+				        <image>
+				          	<name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
+		         		</image>
+			     	</images>
 	                <enricher>
 				    	<config>
 					      	<jkube-service>
