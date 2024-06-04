@@ -78,6 +78,12 @@
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
+  				<configuration>
+	  				<authConfig>
+	            		<username>alessiozubiani1996</username>
+	                  	<password>Sondalo2024!</password>
+	        		</authConfig>
+        		</configuration>
   				<executions>
 		         	<execution>
 		             	<goals>
