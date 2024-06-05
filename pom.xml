@@ -145,7 +145,7 @@
 	        		</authConfig>
 	        		<images>
 				        <image>
-				          	<name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
+				          	<name>alessiozubiani1996/springboot-kubernetes/${project.artifactId}:${project.version}</name>
 		         		</image>
 			     	</images>
 	                <enricher>
