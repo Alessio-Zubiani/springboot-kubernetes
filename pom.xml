@@ -72,6 +72,16 @@
 						</exclude>
 					</excludes>
 				</configuration>
+				<executions>
+          			<execution>
+            			<goals>
+              				<goal>repackage</goal>
+        				</goals>
+            			<configuration>
+              				<loaderImplementation>CLASSIC</loaderImplementation>
+            			</configuration>
+          			</execution>
+        		</executions>
 			</plugin>
 			
 			<plugin>
