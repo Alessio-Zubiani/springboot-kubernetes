@@ -65,7 +65,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -73,13 +72,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<executions>
-	                <execution>
-	                    <goals>
-	                        <goal>repackage</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
 			</plugin>
 			
 			<plugin>
@@ -87,7 +79,6 @@
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
 		        <configuration>
-		        	<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>
 		        	<from>
               			<image>openjdk:17</image>
 		        	</from>
@@ -103,6 +94,7 @@
 		              	</auth>
 		          	</to>
 		          	<container>
+		          		<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>
 			    		<ports>
 			        		<port>8080</port>
 			    		</ports>
