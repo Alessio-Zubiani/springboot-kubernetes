@@ -20,9 +20,9 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>-->
+		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
-		<!--<jkube.skip.tag>true</jkube.skip.tag>
+		<jkube.skip.tag>true</jkube.skip.tag>
 		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
 		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>-->
 	</properties>
@@ -69,7 +69,7 @@
 				</configuration>
 			</plugin>
 			
-			<!--<plugin>
+			<plugin>
 		        <groupId>com.google.cloud.tools</groupId>
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
@@ -82,9 +82,9 @@
 		              	</auth>
 		          	</to>
 		        </configuration>
-	      	</plugin>-->
+	      	</plugin>
 	      	
-	      	<plugin>
+	      	<!--<plugin>
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
@@ -110,7 +110,7 @@
 		         		</image>
 			     	</images>
 			    </configuration>
-  				<!--<configuration>
+  				<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
@@ -128,7 +128,7 @@
 					      	
 					    </config>
 				  	</enricher>
-        		</configuration>-->
+        		</configuration>
   				<executions>
 		         	<execution>
 		             	<goals>
@@ -139,7 +139,7 @@
 		             	</goals>
 		         	</execution>
 		     	</executions>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 
