@@ -116,7 +116,7 @@
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
-  				<configuration>
+  				<!--<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
@@ -137,15 +137,15 @@
 				          	</build>
 		         		</image>
 			     	</images>
-			    </configuration>
-  				<!--<configuration>
+			    </configuration>-->
+  				<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
 	        		<images>
 				        <image>
-				          	<name>docker.io/alessiozubiani1996/${project.artifactId}:${project.version}</name>
+				          	<name>alessiozubiani1996/${project.artifactId}:${project.version}</name>
 		         		</image>
 			     	</images>
 	                <enricher>
@@ -153,10 +153,9 @@
 					      	<jkube-service>
 					        	<type>LoadBalancer</type>
 					      	</jkube-service>
-					      	
 					    </config>
 				  	</enricher>
-        		</configuration>-->
+        		</configuration>
   				<executions>
 		         	<execution>
 		             	<goals>
