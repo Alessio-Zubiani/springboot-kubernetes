@@ -12,10 +12,10 @@
 	</parent>
 	
 	<groupId>com.example.kubernetes</groupId>
-	<artifactId>springboot_kubernetes</artifactId>
+	<artifactId>springboot-kubernetes</artifactId>
 	<version>1.0.0</version>
 	
-	<name>springboot_kubernetes</name>
+	<name>springboot-kubernetes</name>
 	<description>SpringBoot with Kubernetes</description>
 	
 	<properties>

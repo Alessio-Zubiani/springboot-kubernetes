@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: springboot-kubernetes
+    name: springboot_kubernetes
   
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
