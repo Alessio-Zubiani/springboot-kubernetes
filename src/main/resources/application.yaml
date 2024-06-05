@@ -1,8 +1,17 @@
 server:
   port: 8080
   servlet:
-    context-path: /sb-k8s
+    context-path: /kubernetes
 
 spring:
   application:
     name: springboot-kubernetes
+  
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+  datasource:
+    url: ${MYSQL_URL}
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
