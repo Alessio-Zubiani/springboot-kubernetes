@@ -20,6 +20,7 @@
 	
 	<properties>
 		<java.version>17</java.version>
+		<start-class>com.example.kubernetes.SpringbootKubernetesApplication</start-class>
 		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
 		<jkube.skip.tag>true</jkube.skip.tag>
@@ -72,7 +73,7 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<executions>
+				<!--<executions>
           			<execution>
             			<goals>
               				<goal>repackage</goal>
@@ -81,7 +82,7 @@
               				<loaderImplementation>CLASSIC</loaderImplementation>
             			</configuration>
           			</execution>
-        		</executions>
+        		</executions>-->
 			</plugin>
 			
 			<plugin>
