@@ -139,10 +139,10 @@
 			     	</images>
 			    </configuration>-->
   				<configuration>
-	  				<authConfig>
+	  				<!--<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
-	        		</authConfig>
+	        		</authConfig>-->
 	        		<pushRegistry>alessiozubiani1996</pushRegistry>
 	        		<images>
 				        <image>
