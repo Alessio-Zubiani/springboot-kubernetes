@@ -74,13 +74,21 @@
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
 		        <configuration>
+		        	<from>
+              			<image>openjdk:17</image>
+		        	</from>
 		          	<to>
-		            	<image>alessiozubiani1996/${project.artifactId}:${project.version}</image>
+		            	<image>docker.io/alessiozubiani1996/${project.artifactId}:${project.version}</image>
 		              	<auth>
 		                  	<username>alessiozubiani1996</username>
 		                  	<password>Sondalo2024!</password>
 		              	</auth>
 		          	</to>
+		          	<container>
+			    		<ports>
+			        		<port>8080</port>
+			    		</ports>
+					</container>
 		        </configuration>
 	      	</plugin>
 	      	
