@@ -92,13 +92,23 @@
 		                  	<password>Sondalo2024!</password>
 		              	</auth>
 		          	</to>
+		          	<containerizingMode>packaged</containerizingMode>
 		          	<container>
-		          		<mainClass>org.springframework.boot.loader.launch.JarLauncher</mainClass>
-			    		<ports>
-			        		<port>8080</port>
-			    		</ports>
-					</container>
+		              	<ports>
+		                  	<port>8080</port>
+		              	</ports>
+		              	<format>Docker</format>
+		          	</container>
 		        </configuration>
+		        <executions>
+          			<execution>
+              			<id>package</id>
+              			<phase>package</phase>
+              			<goals>
+                  			<goal>build</goal>
+              			</goals>
+          			</execution>
+      			</executions>
 	      	</plugin>
 	      	
 	      	<!--<plugin>
