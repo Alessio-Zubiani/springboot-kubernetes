@@ -13,7 +13,7 @@
 	
 	<groupId>com.example.kubernetes</groupId>
 	<artifactId>springboot-kubernetes</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.0</version>
 	
 	<name>springboot-kubernetes</name>
 	<description>SpringBoot with Kubernetes</description>
@@ -65,7 +65,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-                	<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>
+                	<!--<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>-->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -75,7 +75,7 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+			<!--<plugin>
 		        <groupId>com.google.cloud.tools</groupId>
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
@@ -110,9 +110,9 @@
               			</goals>
           			</execution>
       			</executions>
-	      	</plugin>
+	      	</plugin>-->
 	      	
-	      	<!--<plugin>
+	      	<plugin>
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
@@ -126,7 +126,7 @@
 				          	<name>${project.artifactId}:${project.version}</name>
 				          	<alias>${project.artifactId}</alias>
 				          	<build>
-				          		<from>openjdk:latest</from>
+				          		<from>openjdk:17-jdk-slim</from>
 				          		<cmd>java -jar ${project.artifactId}-${project.version}.jar</cmd>
 				          		<ports>
 				          			<port>8080</port>
@@ -138,7 +138,7 @@
 		         		</image>
 			     	</images>
 			    </configuration>
-  				<configuration>
+  				<!--<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
@@ -156,7 +156,7 @@
 					      	
 					    </config>
 				  	</enricher>
-        		</configuration>
+        		</configuration>-->
   				<executions>
 		         	<execution>
 		             	<goals>
@@ -167,7 +167,7 @@
 		             	</goals>
 		         	</execution>
 		     	</executions>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 
