@@ -75,7 +75,7 @@
 				</configuration>
 			</plugin>
 			
-			<!--<plugin>
+			<plugin>
 		        <groupId>com.google.cloud.tools</groupId>
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
@@ -110,13 +110,13 @@
               			</goals>
           			</execution>
       			</executions>
-	      	</plugin>-->
+	      	</plugin>
 	      	
-	      	<plugin>
+	      	<!--<plugin>
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
-  				<!--<configuration>
+  				<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
@@ -137,12 +137,13 @@
 				          	</build>
 		         		</image>
 			     	</images>
-			    </configuration>-->
+			    </configuration>
   				<configuration>
-	  				<!--<authConfig>
+  					<buildStrategy>jib</buildStrategy>
+	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
-	        		</authConfig>-->
+	        		</authConfig>
 	        		<pushRegistry>alessiozubiani1996</pushRegistry>
 	        		<images>
 				        <image>
@@ -167,7 +168,7 @@
 		             	</goals>
 		         	</execution>
 		     	</executions>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 
