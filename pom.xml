@@ -20,10 +20,10 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
+		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
 		<jkube.skip.tag>true</jkube.skip.tag>
-		<!--<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
+		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
 		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>-->
 	</properties>
 	
@@ -138,14 +138,15 @@
 		         		</image>
 			     	</images>
 			    </configuration>-->
-  				<!--<configuration>
+  				<configuration>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
+	        		<pushRegistry>alessiozubiani1996</pushRegistry>
 	        		<images>
 				        <image>
-				          	<name>alessiozubiani1996/springboot-kubernetes/${project.artifactId}:${project.version}</name>
+				          	<name>${project.artifactId}:${project.version}</name>
 		         		</image>
 			     	</images>
 	                <enricher>
@@ -155,7 +156,7 @@
 					      	</jkube-service>
 					    </config>
 				  	</enricher>
-        		</configuration>-->
+        		</configuration>
   				<executions>
 		         	<execution>
 		             	<goals>
