@@ -13,7 +13,7 @@
 	
 	<groupId>com.example.kubernetes</groupId>
 	<artifactId>springboot-kubernetes</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	
 	<name>springboot-kubernetes</name>
 	<description>SpringBoot with Kubernetes</description>
@@ -74,6 +74,7 @@
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
 		        <configuration>
+		        	<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>
 		        	<from>
               			<image>openjdk:17</image>
 		        	</from>
