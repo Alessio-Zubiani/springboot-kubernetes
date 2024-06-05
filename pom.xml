@@ -94,7 +94,7 @@
 		              	</auth>
 		          	</to>
 		          	<container>
-		          		<mainClass>org.springframework.boot.loader.launch.JarLauncher</mainClass>
+		          		<mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
 			    		<ports>
 			        		<port>8080</port>
 			    		</ports>
