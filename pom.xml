@@ -187,7 +187,7 @@
 					      	</jkube-service>
 					    </config>
 				  	</enricher>
-        		</configuration>
+        		</configuration>-->
   				<executions>
 		         	<execution>
 		             	<goals>
@@ -197,7 +197,7 @@
 		                  	<goal>apply</goal>
 		             	</goals>
 		         	</execution>
-		     	</executions>-->
+		     	</executions>
 			</plugin>
 		</plugins>
 	</build>
