@@ -108,10 +108,10 @@
           							<MYSQL_USER>root</MYSQL_USER>
           							<!--<MYSQL_PASSWORD>''</MYSQL_PASSWORD>-->
         						</env>
-        						<imagePullPolicy>Always</imagePullPolicy>
 			           		</build>
 			         	</image>
 			     	</images>
+			     	<imagePullPolicy>Always</imagePullPolicy>
 			     	<enricher>
 				    	<config>
 					      	<jkube-service>
