@@ -12,6 +12,6 @@ spring:
     show-sql: true
   datasource:
     url: ${MYSQL_URL}
-    username: root
-    password:
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver

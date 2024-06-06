@@ -20,11 +20,6 @@
 	
 	<properties>
 		<java.version>17</java.version>
-		<!--<jkube.generator.name>alessiozubiani1996/${project.artifactId}:${project.version}</jkube.generator.name>
-		<jkube.enricher.jkube-service.type>LoadBalancer</jkube.enricher.jkube-service.type>
-		<jkube.skip.tag>true</jkube.skip.tag>
-		<spring-boot.build-image.imageName>alessiozubiani1996/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
-		<jkube.generator.name>${spring-boot.build-image.imageName}</jkube.generator.name>-->
 	</properties>
 	
 	<dependencies>
@@ -65,7 +60,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-                	<!--<mainClass>com.example.kubernetes.SpringbootKubernetesApplication</mainClass>-->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -74,43 +68,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			
-			<!--<plugin>
-		        <groupId>com.google.cloud.tools</groupId>
-		        <artifactId>jib-maven-plugin</artifactId>
-		        <version>3.4.0</version>
-		        <configuration>
-		        	<from>
-              			<image>openjdk:17-jdk-slim</image>
-		        	</from>
-		          	<to>
-		            	<image>docker.io/alessiozubiani1996/${project.artifactId}</image>
-		            	<tags>
-                			<tag>${project.version}</tag>
-            			</tags>
-		              	<auth>
-		                  	<username>alessiozubiani1996</username>
-		                  	<password>Sondalo2024!</password>
-		              	</auth>
-		          	</to>
-		          	<containerizingMode>packaged</containerizingMode>
-		          	<container>
-		              	<ports>
-		                  	<port>8080</port>
-		              	</ports>
-		              	<format>Docker</format>
-		          	</container>
-		        </configuration>
-		        <executions>
-          			<execution>
-              			<id>package</id>
-              			<phase>package</phase>
-              			<goals>
-                  			<goal>build</goal>
-              			</goals>
-          			</execution>
-      			</executions>
-	      	</plugin>-->
 	      	
 	      	<plugin>
   				<groupId>org.eclipse.jkube</groupId>
@@ -148,6 +105,8 @@
 			              		</ports>
 			              		<env>
           							<MYSQL_URL>jdbc:mysql://mysql:3306/springboot_kubernetes</MYSQL_URL>
+          							<MYSQL_USER>root</MYSQL_USER>
+          							<MYSQL_PASSWORD></MYSQL_PASSWORD>
         						</env>
 			           		</build>
 			         	</image>
