@@ -75,7 +75,7 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+			<!--<plugin>
 		        <groupId>com.google.cloud.tools</groupId>
 		        <artifactId>jib-maven-plugin</artifactId>
 		        <version>3.4.0</version>
@@ -110,18 +110,48 @@
               			</goals>
           			</execution>
       			</executions>
-	      	</plugin>
+	      	</plugin>-->
 	      	
-	      	<!--<plugin>
+	      	<plugin>
   				<groupId>org.eclipse.jkube</groupId>
   				<artifactId>kubernetes-maven-plugin</artifactId>
   				<version>1.15.0</version>
   				<configuration>
+  					<buildStrategy>jib</buildStrategy>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
+	        		
 	        		<images>
+			        	<image>
+			          		<name>alessiozubiani1996/${project.artifactId}:latest</name>
+			           		<build>
+			              		<from>openjdk:17-jdk-slim</from>
+		              			<assembly>
+			                 		<mode>dir</mode>
+			                 		<targetDir>/app</targetDir>
+			                 		<inline>
+		                    			<id>copy-jar</id>
+			                    		<baseDirectory>/home/alessio/git_projects/springboot-kubernetes</baseDirectory>
+			                    		<files>
+			                       			<file>
+			                          			<source>target/${project.artifactId}-${project.version}.jar</source>
+			                          			<outputDirectory>.</outputDirectory>
+			                       			</file>
+			                    		</files>
+			                 		</inline>
+			              		</assembly>
+			              		<workdir>/home/alessio/git_projects/springboot-kubernetes</workdir>
+			              		<cmd>java -jar ${project.artifactId}-${project.version}.jar</cmd>
+			              		<ports>
+			                 		<port>8080</port>
+			              		</ports>
+			           		</build>
+			         	</image>
+			     	</images>
+	        		
+	        		<!--<images>
 				        <image>
 				          	<name>${project.artifactId}:${project.version}</name>
 				          	<alias>${project.artifactId}</alias>
@@ -136,9 +166,9 @@
         						</env>
 				          	</build>
 		         		</image>
-			     	</images>
+			     	</images>-->
 			    </configuration>
-  				<configuration>
+  				<!--<configuration>
   					<buildStrategy>jib</buildStrategy>
 	  				<authConfig>
 	            		<username>alessiozubiani1996</username>
@@ -167,8 +197,8 @@
 		                  	<goal>apply</goal>
 		             	</goals>
 		         	</execution>
-		     	</executions>
-			</plugin>-->
+		     	</executions>-->
+			</plugin>
 		</plugins>
 	</build>
 
