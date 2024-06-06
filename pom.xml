@@ -142,7 +142,7 @@
 			                    		</files>
 			                 		</inline>
 			              		</assembly>
-			              		<workdir>/home/alessio/git_projects/springboot-kubernetes</workdir>
+			              		<workdir>/app</workdir>
 			              		<cmd>java -jar ${project.artifactId}-${project.version}.jar</cmd>
 			              		<ports>
 			                 		<port>8080</port>
