@@ -122,7 +122,6 @@
 	            		<username>alessiozubiani1996</username>
 	                  	<password>Sondalo2024!</password>
 	        		</authConfig>
-	        		
 	        		<images>
 			        	<image>
 			          		<name>alessiozubiani1996/${project.artifactId}:latest</name>
@@ -153,44 +152,14 @@
 			           		</build>
 			         	</image>
 			     	</images>
-	        		
-	        		<!--<images>
-				        <image>
-				          	<name>${project.artifactId}:${project.version}</name>
-				          	<alias>${project.artifactId}</alias>
-				          	<build>
-				          		<from>openjdk:17-jdk-slim</from>
-				          		<cmd>java -jar ${project.artifactId}-${project.version}.jar</cmd>
-				          		<ports>
-				          			<port>8080</port>
-				          		</ports>
-				          		<env>
-          							<MYSQL_URL>jdbc:mysql://mysql:3306/springboot_kubernetes</MYSQL_URL>
-        						</env>
-				          	</build>
-		         		</image>
-			     	</images>-->
-			    </configuration>
-  				<!--<configuration>
-  					<buildStrategy>jib</buildStrategy>
-	  				<authConfig>
-	            		<username>alessiozubiani1996</username>
-	                  	<password>Sondalo2024!</password>
-	        		</authConfig>
-	        		<pushRegistry>alessiozubiani1996</pushRegistry>
-	        		<images>
-				        <image>
-				          	<name>${project.artifactId}:${project.version}</name>
-		         		</image>
-			     	</images>
-	                <enricher>
+			     	<enricher>
 				    	<config>
 					      	<jkube-service>
 					        	<type>LoadBalancer</type>
 					      	</jkube-service>
 					    </config>
 				  	</enricher>
-        		</configuration>-->
+	        	</configuration>
   				<executions>
 		         	<execution>
 		             	<goals>
