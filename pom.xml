@@ -82,6 +82,7 @@
 	        		<images>
 			        	<image>
 			          		<name>alessiozubiani1996/${project.artifactId}:latest</name>
+			          		<imagePullPolicy>Always</imagePullPolicy>
 			           		<build>
 			              		<from>openjdk:17-jdk-slim</from>
 		              			<assembly>
@@ -111,7 +112,6 @@
 			           		</build>
 			         	</image>
 			     	</images>
-			     	<imagePullPolicy>Always</imagePullPolicy>
 			     	<enricher>
 				    	<config>
 					      	<jkube-service>
