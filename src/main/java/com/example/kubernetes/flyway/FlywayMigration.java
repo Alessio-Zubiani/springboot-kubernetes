@@ -17,12 +17,13 @@ public class FlywayMigration {
 		Flyway.configure()
         		.dataSource(dataSource)
         		.baselineOnMigrate(true)
+        		.baselineVersion("0")
         		.outOfOrder(true)
+        		.validateOnMigrate(true)
         		.ignoreMigrationPatterns("*:missing")
         		.load();
 		
 		return flyway -> {
-			flyway.repair();
             flyway.migrate();
 		};
 	}
