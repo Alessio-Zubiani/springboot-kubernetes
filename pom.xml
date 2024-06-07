@@ -104,7 +104,7 @@
 			                 		<port>8080</port>
 			              		</ports>
 			              		<env>
-          							<MYSQL_URL>jdbc:mysql://mysql:3306/springboot_kubernetes?useSSL=false</MYSQL_URL>
+          							<MYSQL_URL>jdbc:mysql://mysql:3306/springboot_kubernetes?useSSL=false&allowPublicKeyRetrieval=true</MYSQL_URL>
           							<MYSQL_USER>root</MYSQL_USER>
           							<MYSQL_PASSWORD>root</MYSQL_PASSWORD>
         						</env>
