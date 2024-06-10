@@ -45,6 +45,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-amqp</artifactId>
+	    </dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -138,6 +142,43 @@
 		         	</execution>
 		     	</executions>
 			</plugin>
+			
+			<!--<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.0</version>
+				<configuration>
+					<from>
+						<image>openjdk:17-jdk-slim</image>
+					</from>
+					<to>
+						<image>docker.io/alessiozubiani1996/${project.artifactId}</image>
+						<tags>
+							<tag>${project.version}</tag>
+						</tags>
+						<auth>
+							<username>alessiozubiani1996</username>
+							<password>Sondalo2024!</password>
+						</auth>
+					</to>
+					<containerizingMode>packaged</containerizingMode>
+					<container>
+						<ports>
+							<port>8080</port>
+						</ports>
+						<format>Docker</format>
+					</container>
+				</configuration>
+				<executions>
+					<execution>
+						<id>package</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>-->
 		</plugins>
 	</build>
 
