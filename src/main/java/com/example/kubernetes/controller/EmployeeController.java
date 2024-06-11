@@ -42,7 +42,7 @@ public class EmployeeController {
 		return ResponseEntity.status(HttpStatus.OK).body(this.employeeService.getEmployeeById(id));
 	}
 	
-	@GetMapping("/{id}")
+	@PostMapping("/message")
 	public ResponseEntity<Employee> sendEmployee(@RequestBody Employee e) throws JMSException {
 		this.messageService.sendMessage(e);
 		return ResponseEntity.status(HttpStatus.OK).body(e);
