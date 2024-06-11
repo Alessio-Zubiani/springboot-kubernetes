@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.kubernetes.entity.Employee;
 import com.example.kubernetes.service.EmployeeService;
 import com.example.kubernetes.service.MessageService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +44,7 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/message")
-	public ResponseEntity<Employee> sendEmployee(@RequestBody Employee e) throws JMSException {
+	public ResponseEntity<Employee> sendEmployee(@RequestBody Employee e) throws JMSException, JsonProcessingException {
 		this.messageService.sendMessage(e);
 		return ResponseEntity.status(HttpStatus.OK).body(e);
 	}
