@@ -3,6 +3,7 @@ package com.example.kubernetes.mq.config;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.core.JmsTemplate;
 
 import jakarta.jms.ConnectionFactory;
@@ -26,6 +27,15 @@ public class ActiveMqConfiguration {
 		jmsTemplate.setConnectionFactory(this.connectionFactory());
 		
 		return jmsTemplate;
+	}
+	
+	@Bean
+	public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
+	    DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+	    factory.setConnectionFactory(this.connectionFactory());
+	    factory.setConcurrency("1-1");
+	    
+	    return factory;
 	}
 	
 }

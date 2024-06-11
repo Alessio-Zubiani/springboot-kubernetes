@@ -24,7 +24,7 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public void sendMessage(Employee e) throws JMSException, JsonProcessingException {
 		String message = this.mapper.writeValueAsString(e);
-		log.info("Sending message: [{}]", e);
+		log.info("Sending message: [{}]", message);
 		
 		this.jmsTemplate.convertAndSend("springboot.kubernetes", message);
 	}
