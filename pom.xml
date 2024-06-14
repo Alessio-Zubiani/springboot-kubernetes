@@ -12,11 +12,11 @@
 	</parent>
 	
 	<groupId>com.example.kubernetes</groupId>
-	<artifactId>springboot-kubernetes</artifactId>
+	<artifactId>springboot-kubernetes-producer</artifactId>
 	<version>1.0.0</version>
 	
-	<name>springboot-kubernetes</name>
-	<description>SpringBoot with Kubernetes</description>
+	<name>springboot-kubernetes-producer</name>
+	<description>SpringBoot with Kubernetes Producer</description>
 	
 	<properties>
 		<java.version>17</java.version>
@@ -116,8 +116,8 @@
 			                 		<port>8080</port>
 			              		</ports>
 			              		<env>
-          							<MYSQL_URL>jdbc:mysql://mysql:3306/springboot_kubernetes</MYSQL_URL>
-          							<MYSQL_USER>springboot_kubernetes</MYSQL_USER>
+          							<MYSQL_URL>jdbc:mysql://mysql:3306/producer</MYSQL_URL>
+          							<MYSQL_USER>producer</MYSQL_USER>
           							<MYSQL_PASSWORD>password</MYSQL_PASSWORD>
         						</env>
 			           		</build>

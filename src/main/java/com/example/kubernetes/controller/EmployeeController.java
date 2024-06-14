@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.example.kubernetes.entity.Employee;
 import com.example.kubernetes.service.EmployeeService;
-import com.example.kubernetes.service.MessageService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import org.springframework.http.HttpStatus;
@@ -25,11 +24,10 @@ import lombok.RequiredArgsConstructor;
 public class EmployeeController {
 	
 	private final EmployeeService employeeService;
-	private final MessageService messageService;
 	
 	
 	@PostMapping
-	public ResponseEntity<Employee> createEmployee(@RequestBody Employee e) {
+	public ResponseEntity<Employee> createEmployee(@RequestBody Employee e) throws JsonProcessingException, JMSException {
 		return ResponseEntity.status(HttpStatus.OK).body(this.employeeService.createEmployee(e));
 	}
 	
@@ -41,12 +39,6 @@ public class EmployeeController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") int id) {
 		return ResponseEntity.status(HttpStatus.OK).body(this.employeeService.getEmployeeById(id));
-	}
-	
-	@PostMapping("/message")
-	public ResponseEntity<Employee> sendEmployee(@RequestBody Employee e) throws JMSException, JsonProcessingException {
-		this.messageService.sendMessage(e);
-		return ResponseEntity.status(HttpStatus.OK).body(e);
 	}
 
 }
