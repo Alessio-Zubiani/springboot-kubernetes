@@ -29,13 +29,21 @@ spec:
             - name: MYSQL_USER
               value: producer
             - name: MYSQL_URL
-              value: 'jdbc:mysql://mysql:3306/producer?allowPublicKeyRetrieval=true'
-          livenessProbe:
-            initialDelaySeconds: 10
+              value: 'jdbc:mysql://mysql:3306/producer'
+          startupProbe:
+            failureThreshold: 5
             periodSeconds: 10
             httpGet:
               path: /k8s-producer/actuator/health
               port: 8080
+          livenessProbe:
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            failureThreshold: 5
+            httpGet:
+              path: /k8s-producer/actuator/health
+              port: 8080
+              scheme: HTTP
 ---
 apiVersion: v1
 kind: Service
