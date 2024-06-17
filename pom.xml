@@ -138,6 +138,16 @@
 					      	</jkube-service>
 					    </config>
 				  	</enricher>
+				  	<resources>
+        				<controller>
+        					<readiness>
+			                	<getUrl>http://110.244.0.29:8080/k8s-producer/actuator/health</getUrl>
+			                	<tcpPort>8080</tcpPort>
+			                	<initialDelaySeconds>10</initialDelaySeconds>
+			                	<timeoutSeconds>10</timeoutSeconds>
+            				</readiness>
+        				</controller>
+				  	</resources>
 	        	</configuration>
   				<executions>
 		         	<execution>
