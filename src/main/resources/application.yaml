@@ -1,7 +1,7 @@
 server:
   port: 8080
   servlet:
-    servlet-path: /k8s-producer
+    context-path: /k8s-producer
 
 spring:
   application:
