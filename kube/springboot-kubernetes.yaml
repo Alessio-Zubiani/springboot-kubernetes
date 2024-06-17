@@ -1,35 +1,49 @@
-# Deployment definition
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-kubernetes
+  name: springboot-kubernetes-producer
+  labels:
+    app: springboot-kubernetes-producer
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: springboot-kubernetes
+      app: springboot-kubernetes-producer
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: springboot-kubernetes
+        app: springboot-kubernetes-producer
     spec:
       containers:
-        - name: app
-          image: alessiozubiani1996/springboot-kubernetes:1.0.0
-          ports:
-            - containerPort: 8080
+        - name: springboot-kubernetes-producer
+          image: 'alessiozubiani1996/springboot-kubernetes-producer:latest'
           imagePullPolicy: IfNotPresent
-
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: MYSQL_PASSWORD
+              value: password
+            - name: MYSQL_USER
+              value: producer
+            - name: MYSQL_URL
+              value: 'jdbc:mysql://mysql:3306/producer?allowPublicKeyRetrieval=true'
+          livenessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            httpGet:
+              path: /k8s-producer/actuator/health
+              port: 8080
 ---
-
-# Service definition
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-kubernetes
+  name: springboot-kubernetes-producer
 spec:
   selector:
-    app: springboot-kubernetes
+    app: springboot-kubernetes-producer
   ports:
     - port: 8080
       targetPort: 8080
