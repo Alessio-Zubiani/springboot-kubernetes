@@ -48,7 +48,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-kubernetes-producer
+  name: springboot-kubernetes-producer-service
+  annotations:
+    prometheus.io/port: "http"
+    prometheus.io/scrape: "true"
+  labels:
+    app.kubernetes.io/part-of: dms
 spec:
   selector:
     app: springboot-kubernetes-producer
