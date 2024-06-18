@@ -53,6 +53,20 @@ spec:
   selector:
     app: springboot-kubernetes-producer
   ports:
-    - port: 8080
+    - name: http
+      port: 8080
       targetPort: 8080
+      protocol: TCP
   type: LoadBalancer
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: springboot-kubernetes-producer-monitor
+spec:
+  selector:
+    matchLabels:
+      app: springboot-kubernetes-producer
+  endpoints:
+    - port: http
+      path: "/actuator/prometheus"
