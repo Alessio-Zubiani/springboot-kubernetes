@@ -30,20 +30,20 @@ spec:
               value: producer
             - name: MYSQL_URL
               value: 'jdbc:mysql://mysql:3306/producer'
-          startupProbe:
-            failureThreshold: 5
+          readinessProbe:
+            initialDelaySeconds: 100
             periodSeconds: 10
+            timeoutSeconds: 20
             httpGet:
-              path: /k8s-producer/actuator/health
+              path: /k8s-producer/actuator/health/readiness
               port: 8080
           livenessProbe:
-            initialDelaySeconds: 20
+            initialDelaySeconds: 100
             periodSeconds: 10
-            failureThreshold: 5
+            timeoutSeconds: 20
             httpGet:
-              path: /k8s-producer/actuator/health
+              path: /k8s-producer/actuator/health/liveness
               port: 8080
-              scheme: HTTP
 ---
 apiVersion: v1
 kind: Service
