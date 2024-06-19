@@ -17,10 +17,11 @@ spring:
 
 management:
   endpoints:
-    enabled-by-default: true
     web:
       exposure:
         include: 'health,metrics,prometheus'
   endpoint:
     health:
-      show-details: always
+      enabled: true
+    metrics:
+      enabled: true
