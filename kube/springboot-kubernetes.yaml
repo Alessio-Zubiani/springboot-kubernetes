@@ -28,15 +28,21 @@ spec:
               value: producer
             - name: MYSQL_URL
               value: 'jdbc:mysql://mysql:3306/producer'
+          startupProbe:
+            timeoutSeconds: 20
+            periodSeconds: 10
+            httpGet:
+              path: /k8s-producer/actuator/health
+              port: 8080
           readinessProbe:
-            initialDelaySeconds: 100
+            initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 20
             httpGet:
               path: /k8s-producer/actuator/health/readiness
               port: 8080
           livenessProbe:
-            initialDelaySeconds: 100
+            initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 20
             httpGet:
@@ -68,7 +74,7 @@ metadata:
 spec:
   endpoints:
     - port: http
-      path: "/actuator/prometheus"
+      path: "/k8s-producer/actuator/prometheus"
       interval: 15s
   selector:
     matchLabels:
