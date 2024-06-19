@@ -8,7 +8,6 @@ spring:
     name: springboot-kubernetes-producer
   
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
     url: ${MYSQL_URL}?allowPublicKeyRetrieval=true
